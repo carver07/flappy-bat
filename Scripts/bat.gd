@@ -21,5 +21,5 @@ func _process(_delta: float) -> void:
 
 
 func _on_visible_on_screen_notifier_2d_screen_exited() -> void:
-	### ADD COMMENT ABOUT WHAT THIS CODE DOES
+	### this shows when you get a point
 	get_tree().call_deferred("reload_current_scene")

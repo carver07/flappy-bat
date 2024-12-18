@@ -20,10 +20,12 @@ func _on_timer_timeout() -> void:
 	var sm_scale = 4 - st_scale + modifiers.pick_random()
 	oi.position.x = vp_width
 	
-	### ADD COMMENT ABOUT WHAT THIS CODE DOES
-	
+	### This neutralizes you after you get hit by a rock
+	if oi.get_child_count() > 0:
+		oi.get_child(0).scale = Vector2(st_scale,st_scale)
+		oi.get_child(0).get_child(0).frame = randi_range(0,3)
 		
-	### ADD COMMENT ABOUT WHAT THIS CODE DOES
+	### This respawns you after you get hit b y a rock
 	if oi.get_child_count() > 1:
 		oi.get_child(1).scale = Vector2(sm_scale,sm_scale)
 		oi.get_child(1).get_child(0).frame = randi_range(0,3)
